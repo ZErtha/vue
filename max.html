@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+
+<body>
+
+<div id="app">
+<input type="text" id="the first" v-model="a">
+<span>vs</span>
+<input type="text" id="the second" v-model="b">
+<button v-on:click="max">最大值是</button>
+<span>=</span>
+<span>{{maxnumber}}</span>
+</div>
+
+<script>
+new Vue({
+	el:"#app",
+	data:{
+		a:"",
+		b:"",
+		maxnumber:"?",
+	},
+	methods:{
+		max:function(){
+			if(eval(this.a)>=eval(this.b)){
+				this.maxnumber=this.a;
+			}
+			else{
+				this.maxnumber=this.b;
+			}
+		}
+	}
+})
+</script>
+
+</body>
+</html>
