@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+
+<body>
+<div id="app">
+<input type="text" id="the first" v-model="a" >
+<span>+</span>
+<input type="text" id="the second" v-model="b" >
+<span>=</span>
+<span>{{he}}</span>
+<button v-on:click="add">求和</button>
+
+
+<script>
+new Vue({
+	el:'#app',
+	data:{
+		a:"",
+		b:"",
+		he:"?",
+	},
+	methods:{
+		add:function(){
+			this.he=eval(this.a)+eval(this.b);
+		}
+	}
+})
+</script>
+</div>
+</body>
+</html>
